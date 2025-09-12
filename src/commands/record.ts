@@ -24,10 +24,20 @@ export default class Record extends Command {
   public async run(): Promise<void> {
     return new Promise((resolve) => {
       ;(async () => {
+        const obs = new OBSWebSocket()
+
+        const cleanup = async () => {
+          await obs.disconnect()
+        }
+
+        const successfulExit = async () => {
+          await cleanup()
+          this.log('Successfully exited')
+          resolve()
+        }
+
         try {
           const { args, flags } = await this.parse(Record)
-
-          const obs = new OBSWebSocket()
 
           const isDryRun = flags.dryRun
           const filename = args.filename ?? ''
@@ -68,12 +78,6 @@ export default class Record extends Command {
             saveRecordDirectory,
           })
 
-          const exit = async () => {
-            await obs.disconnect()
-            this.log('Successfully exited')
-            resolve()
-          }
-
           // create directory to save recording and change where obs saves recording to it
           // eslint-disable-next-line unicorn/no-negated-condition
           if (!isDryRun) {
@@ -99,13 +103,14 @@ export default class Record extends Command {
                 await obs.call('SetRecordDirectory', {
                   recordDirectory: ogRecordDirectory,
                 })
-                await exit()
+                await successfulExit()
               }
             })
           } else {
-            await exit()
+            await successfulExit()
           }
         } catch (error) {
+          await cleanup()
           this.error(`Unexpected error occurred: ${error}`)
         }
       })()
