@@ -83,6 +83,7 @@ export default class Record extends Command {
             })
 
             await obs.call('StartRecord')
+            this.log('Recording started')
 
             obs.on('RecordStateChanged', async (evt) => {
               this.logJson(evt)
