@@ -12,12 +12,15 @@ export default class StopRecord extends Command {
   public async run(): Promise<void> {
     const obs = new OBSWebSocket()
 
-    await obs.connect('ws://127.0.0.1:4455', process.env.OBS_WS_PASSWORD)
+    try {
+      await obs.connect('ws://127.0.0.1:4455', process.env.OBS_WS_PASSWORD)
 
-    await obs.call('StopRecord')
-
-    this.log('Recording stopped')
-
-    await obs.disconnect()
+      // NOTE: errors if there is no recording
+      await obs.call('StopRecord')
+    } catch (error) {
+    } finally {
+      await obs.disconnect()
+      this.log('Recording stopped')
+    }
   }
 }
