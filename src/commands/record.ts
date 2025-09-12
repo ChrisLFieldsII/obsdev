@@ -97,7 +97,7 @@ export default class Record extends Command {
                   renameSync(evt.outputPath, savePath)
                   this.log(`Video saved at ${savePath}`)
 
-                  execSync(`open ${savePath}`) // NOTE: not cx
+                  execSync(`open -R ${savePath}`) // NOTE: not cx
                 }
 
                 await obs.call('SetRecordDirectory', {
