@@ -1,26 +1,31 @@
-import {Args, Command, Flags} from '@oclif/core'
-import {execSync} from 'node:child_process'
-import {mkdirSync, renameSync} from 'node:fs'
-import {parse as parsePath, resolve as resolvePath} from 'node:path'
-import {OBSWebSocket} from 'obs-websocket-js'
+import { Args, Command, Flags } from '@oclif/core'
+import { execSync } from 'node:child_process'
+import { mkdirSync, renameSync } from 'node:fs'
+import { parse as parsePath, resolve as resolvePath } from 'node:path'
+import { OBSWebSocket } from 'obs-websocket-js'
 
-import {createExample} from '../utils.js'
+import { createExample } from '../utils.js'
 
 export default class Record extends Command {
   static override args = {
-    filename: Args.string({description: 'filename for saved recording with no extension'}),
+    filename: Args.string({
+      description: 'filename for saved recording with no extension',
+    }),
   }
   static override description = 'Start an OBS recording'
   static override examples = [createExample('-d demo-1')]
   static override flags = {
-    dryRun: Flags.boolean({char: 'd', description: 'Print what would happen but take no action'}),
+    dryRun: Flags.boolean({
+      char: 'd',
+      description: 'Print what would happen but take no action',
+    }),
   }
 
   public async run(): Promise<void> {
     return new Promise((resolve) => {
       ;(async () => {
         try {
-          const {args, flags} = await this.parse(Record)
+          const { args, flags } = await this.parse(Record)
 
           const obs = new OBSWebSocket()
 
@@ -37,15 +42,23 @@ export default class Record extends Command {
             .trim()
             .replaceAll('/', '-') // normalize branch name to prevent nested dirs
 
-          const gitDir = execSync('git rev-parse --show-toplevel', {encoding: 'utf8'}).trim()
+          const gitDir = execSync('git rev-parse --show-toplevel', {
+            encoding: 'utf8',
+          }).trim()
           const projName = parsePath(gitDir).name
 
           // Connect to localhost with password
           await obs.connect('ws://127.0.0.1:4455', process.env.OBS_WS_PASSWORD)
 
           // get original record directory (Where recordings are stored)
-          const {recordDirectory: ogRecordDirectory} = await obs.call('GetRecordDirectory')
-          const saveRecordDirectory = resolvePath(ogRecordDirectory, projName, branch)
+          const { recordDirectory: ogRecordDirectory } = await obs.call(
+            'GetRecordDirectory'
+          )
+          const saveRecordDirectory = resolvePath(
+            ogRecordDirectory,
+            projName,
+            branch
+          )
           const savePath = resolvePath(saveRecordDirectory, `${filename}.mp4`)
 
           this.logJson({
@@ -64,7 +77,7 @@ export default class Record extends Command {
           // create directory to save recording and change where obs saves recording to it
           // eslint-disable-next-line unicorn/no-negated-condition
           if (!isDryRun) {
-            mkdirSync(saveRecordDirectory, {recursive: true})
+            mkdirSync(saveRecordDirectory, { recursive: true })
             await obs.call('SetRecordDirectory', {
               recordDirectory: saveRecordDirectory,
             })
