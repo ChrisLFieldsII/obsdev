@@ -20,7 +20,7 @@ $ npm install -g obsdev
 $ obsdev COMMAND
 running command...
 $ obsdev (--version)
-obsdev/0.0.0 darwin-arm64 node-v22.13.0
+obsdev/0.0.0 darwin-arm64 node-v20.11.1
 $ obsdev --help [COMMAND]
 USAGE
   $ obsdev COMMAND
@@ -29,8 +29,6 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`obsdev hello PERSON`](#obsdev-hello-person)
-* [`obsdev hello world`](#obsdev-hello-world)
 * [`obsdev help [COMMAND]`](#obsdev-help-command)
 * [`obsdev plugins`](#obsdev-plugins)
 * [`obsdev plugins add PLUGIN`](#obsdev-plugins-add-plugin)
@@ -42,48 +40,8 @@ USAGE
 * [`obsdev plugins uninstall [PLUGIN]`](#obsdev-plugins-uninstall-plugin)
 * [`obsdev plugins unlink [PLUGIN]`](#obsdev-plugins-unlink-plugin)
 * [`obsdev plugins update`](#obsdev-plugins-update)
-
-## `obsdev hello PERSON`
-
-Say hello
-
-```
-USAGE
-  $ obsdev hello PERSON -f <value>
-
-ARGUMENTS
-  PERSON  Person to say hello to
-
-FLAGS
-  -f, --from=<value>  (required) Who is saying hello
-
-DESCRIPTION
-  Say hello
-
-EXAMPLES
-  $ obsdev hello friend --from oclif
-  hello friend from oclif! (./src/commands/hello/index.ts)
-```
-
-_See code: [src/commands/hello/index.ts](https://github.com/projects/obsdev/blob/v0.0.0/src/commands/hello/index.ts)_
-
-## `obsdev hello world`
-
-Say hello world
-
-```
-USAGE
-  $ obsdev hello world
-
-DESCRIPTION
-  Say hello world
-
-EXAMPLES
-  $ obsdev hello world
-  hello world! (./src/commands/hello/world.ts)
-```
-
-_See code: [src/commands/hello/world.ts](https://github.com/projects/obsdev/blob/v0.0.0/src/commands/hello/world.ts)_
+* [`obsdev record [FILENAME]`](#obsdev-record-filename)
+* [`obsdev stop-record`](#obsdev-stop-record)
 
 ## `obsdev help [COMMAND]`
 
@@ -394,4 +352,44 @@ DESCRIPTION
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/update.ts)_
+
+## `obsdev record [FILENAME]`
+
+Start an OBS recording
+
+```
+USAGE
+  $ obsdev record [FILENAME] [-d]
+
+ARGUMENTS
+  FILENAME  filename for saved recording with no extension
+
+FLAGS
+  -d, --dryRun  Print what would happen but take no action
+
+DESCRIPTION
+  Start an OBS recording
+
+EXAMPLES
+  $ obsdev record -d demo-1
+```
+
+_See code: [src/commands/record.ts](https://github.com/projects/obsdev/blob/v0.0.0/src/commands/record.ts)_
+
+## `obsdev stop-record`
+
+Stop an OBS recording
+
+```
+USAGE
+  $ obsdev stop-record
+
+DESCRIPTION
+  Stop an OBS recording
+
+EXAMPLES
+  $ obsdev stop-record
+```
+
+_See code: [src/commands/stop-record.ts](https://github.com/projects/obsdev/blob/v0.0.0/src/commands/stop-record.ts)_
 <!-- commandsstop -->
