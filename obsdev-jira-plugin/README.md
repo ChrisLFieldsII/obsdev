@@ -20,7 +20,7 @@ $ npm install -g obsdevjiraplugin
 $ obsdevjiraplugin COMMAND
 running command...
 $ obsdevjiraplugin (--version)
-obsdevjiraplugin/0.0.0 darwin-arm64 node-v20.11.1
+obsdevjiraplugin/0.0.0-test.3 linux-x64 node-v20.19.5
 $ obsdevjiraplugin --help [COMMAND]
 USAGE
   $ obsdevjiraplugin COMMAND
@@ -29,8 +29,6 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`obsdevjiraplugin hello PERSON`](#obsdevjiraplugin-hello-person)
-* [`obsdevjiraplugin hello world`](#obsdevjiraplugin-hello-world)
 * [`obsdevjiraplugin help [COMMAND]`](#obsdevjiraplugin-help-command)
 * [`obsdevjiraplugin plugins`](#obsdevjiraplugin-plugins)
 * [`obsdevjiraplugin plugins add PLUGIN`](#obsdevjiraplugin-plugins-add-plugin)
@@ -42,48 +40,6 @@ USAGE
 * [`obsdevjiraplugin plugins uninstall [PLUGIN]`](#obsdevjiraplugin-plugins-uninstall-plugin)
 * [`obsdevjiraplugin plugins unlink [PLUGIN]`](#obsdevjiraplugin-plugins-unlink-plugin)
 * [`obsdevjiraplugin plugins update`](#obsdevjiraplugin-plugins-update)
-
-## `obsdevjiraplugin hello PERSON`
-
-Say hello
-
-```
-USAGE
-  $ obsdevjiraplugin hello PERSON -f <value>
-
-ARGUMENTS
-  PERSON  Person to say hello to
-
-FLAGS
-  -f, --from=<value>  (required) Who is saying hello
-
-DESCRIPTION
-  Say hello
-
-EXAMPLES
-  $ obsdevjiraplugin hello friend --from oclif
-  hello friend from oclif! (./src/commands/hello/index.ts)
-```
-
-_See code: [src/commands/hello/index.ts](https://github.com/projects/obsdevjiraplugin/blob/v0.0.0/src/commands/hello/index.ts)_
-
-## `obsdevjiraplugin hello world`
-
-Say hello world
-
-```
-USAGE
-  $ obsdevjiraplugin hello world
-
-DESCRIPTION
-  Say hello world
-
-EXAMPLES
-  $ obsdevjiraplugin hello world
-  hello world! (./src/commands/hello/world.ts)
-```
-
-_See code: [src/commands/hello/world.ts](https://github.com/projects/obsdevjiraplugin/blob/v0.0.0/src/commands/hello/world.ts)_
 
 ## `obsdevjiraplugin help [COMMAND]`
 
@@ -126,7 +82,7 @@ EXAMPLES
   $ obsdevjiraplugin plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/index.ts)_
 
 ## `obsdevjiraplugin plugins add PLUGIN`
 
@@ -200,7 +156,7 @@ EXAMPLES
   $ obsdevjiraplugin plugins inspect myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/inspect.ts)_
 
 ## `obsdevjiraplugin plugins install PLUGIN`
 
@@ -249,7 +205,7 @@ EXAMPLES
     $ obsdevjiraplugin plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/install.ts)_
 
 ## `obsdevjiraplugin plugins link PATH`
 
@@ -280,7 +236,7 @@ EXAMPLES
   $ obsdevjiraplugin plugins link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/link.ts)_
 
 ## `obsdevjiraplugin plugins remove [PLUGIN]`
 
@@ -321,7 +277,7 @@ FLAGS
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/reset.ts)_
 
 ## `obsdevjiraplugin plugins uninstall [PLUGIN]`
 
@@ -349,7 +305,7 @@ EXAMPLES
   $ obsdevjiraplugin plugins uninstall myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/uninstall.ts)_
 
 ## `obsdevjiraplugin plugins unlink [PLUGIN]`
 
@@ -393,5 +349,5 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/update.ts)_
 <!-- commandsstop -->
