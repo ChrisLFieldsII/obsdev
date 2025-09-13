@@ -1,33 +1,35 @@
-obsdev
-=================
+# obsdev
 
 Automate use of OBS recordings to help document development workflows with audio/video
-
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/obsdev.svg)](https://npmjs.org/package/obsdev)
 [![Downloads/week](https://img.shields.io/npm/dw/obsdev.svg)](https://npmjs.org/package/obsdev)
 
-
 <!-- toc -->
+* [obsdev](#obsdev)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
+
 # Usage
+
 <!-- usage -->
 ```sh-session
 $ npm install -g obsdev
 $ obsdev COMMAND
 running command...
 $ obsdev (--version)
-obsdev/1.0.0 linux-x64 node-v20.19.5
+obsdev/1.0.1 darwin-arm64 node-v20.11.1
 $ obsdev --help [COMMAND]
 USAGE
   $ obsdev COMMAND
 ...
 ```
 <!-- usagestop -->
+
 # Commands
+
 <!-- commands -->
 * [`obsdev help [COMMAND]`](#obsdev-help-command)
 * [`obsdev plugins`](#obsdev-plugins)
@@ -40,6 +42,9 @@ USAGE
 * [`obsdev plugins uninstall [PLUGIN]`](#obsdev-plugins-uninstall-plugin)
 * [`obsdev plugins unlink [PLUGIN]`](#obsdev-plugins-unlink-plugin)
 * [`obsdev plugins update`](#obsdev-plugins-update)
+* [`obsdev record [FILENAME]`](#obsdev-record-filename)
+* [`obsdev stop-record`](#obsdev-stop-record)
+* [`obsdev version`](#obsdev-version)
 
 ## `obsdev help [COMMAND]`
 
@@ -350,4 +355,64 @@ DESCRIPTION
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/update.ts)_
+
+## `obsdev record [FILENAME]`
+
+Start an OBS recording
+
+```
+USAGE
+  $ obsdev record [FILENAME] [-d]
+
+ARGUMENTS
+  FILENAME  filename for saved recording with no extension
+
+FLAGS
+  -d, --dryRun  Print what would happen but take no action
+
+DESCRIPTION
+  Start an OBS recording
+
+EXAMPLES
+  $ obsdev record -d demo-1
+```
+
+_See code: [src/commands/record.ts](https://github.com/ChrisLFieldsII/obsdev/blob/v1.0.1/src/commands/record.ts)_
+
+## `obsdev stop-record`
+
+Stop an OBS recording
+
+```
+USAGE
+  $ obsdev stop-record
+
+DESCRIPTION
+  Stop an OBS recording
+
+EXAMPLES
+  $ obsdev stop-record
+```
+
+_See code: [src/commands/stop-record.ts](https://github.com/ChrisLFieldsII/obsdev/blob/v1.0.1/src/commands/stop-record.ts)_
+
+## `obsdev version`
+
+```
+USAGE
+  $ obsdev version [--json] [--verbose]
+
+FLAGS
+  --verbose  Show additional information about the CLI.
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+FLAG DESCRIPTIONS
+  --verbose  Show additional information about the CLI.
+
+    Additionally shows the architecture, node version, operating system, and versions of plugins that the CLI is using.
+```
+
+_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/v2.2.32/src/commands/version.ts)_
 <!-- commandsstop -->

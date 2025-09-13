@@ -1641,6 +1641,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@oclif/plugin-version@npm:^2.2.32":
+  version: 2.2.32
+  resolution: "@oclif/plugin-version@npm:2.2.32"
+  dependencies:
+    "@oclif/core": "npm:^4"
+    ansis: "npm:^3.17.0"
+  checksum: 10c0/7657d15c0024a9671febc49fcaf219722fd4a0e4f5debacb88aa5d31913b2b5f8bd38c7337973a24c7d02b0bdf43345b725043216c82ad534d83cfe6e990f1c1
+  languageName: node
+  linkType: hard
+
 "@oclif/plugin-warn-if-update-available@npm:^3.1.46":
   version: 3.1.46
   resolution: "@oclif/plugin-warn-if-update-available@npm:3.1.46"
@@ -6787,7 +6797,9 @@ __metadata:
     "@eslint/compat": "npm:^1"
     "@oclif/core": "npm:^4"
     "@oclif/plugin-help": "npm:^6"
+    "@oclif/plugin-not-found": "npm:^3.2.67"
     "@oclif/plugin-plugins": "npm:^5"
+    "@oclif/plugin-version": "npm:^2.2.32"
     "@oclif/prettier-config": "npm:^0.2.1"
     "@oclif/test": "npm:^4"
     "@types/chai": "npm:^4"
