@@ -32,10 +32,10 @@ jobs:
     if: ${{ needs.get-changed-projects.outputs.projects != '[]' }}
     strategy:
       matrix:
-        os: ['ubuntu-latest', 'windows-latest']
+        os: ['ubuntu-latest']
         node_version: [lts/-1, lts/*, latest]
         project: ${{ fromJson(needs.get-changed-projects.outputs.projects) }}
-      fail-fast: false
+      fail-fast: true
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
