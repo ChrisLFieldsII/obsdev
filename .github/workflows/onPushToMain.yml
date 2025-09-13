@@ -1,5 +1,8 @@
-# test
 name: version, tag and github release
+
+# enable write permissions so can push update README
+permissions:
+  contents: write
 
 on:
   push:
