@@ -99,6 +99,8 @@ export default class Record extends Command {
                   renameSync(evt.outputPath, savePath)
                   this.log(`Video saved at ${savePath}`)
 
+                  await this.config.runHook('videoSaved', { path: savePath })
+
                   execSync(`open -R ${savePath}`) // NOTE: not cx
                 }
 
