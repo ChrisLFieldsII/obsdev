@@ -2,9 +2,9 @@
 *-error.log
 **/.DS_Store
 /.idea
-/dist
-/tmp
-/node_modules
+dist
+tmp
+node_modules
 oclif.manifest.json
 
 package-lock.json
@@ -20,3 +20,5 @@ pnpm-lock.yaml
 
 
 tsconfig.tsbuildinfo
+jira-post-attachment.sh
+test.sh
