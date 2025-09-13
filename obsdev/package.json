@@ -1,7 +1,7 @@
 {
   "name": "obsdev",
   "description": "Automate use of OBS recordings via command line to help document development workflows with audio/video",
-  "version": "1.1.0-test.2",
+  "version": "1.1.0-test.3",
   "author": "Christopher Fields II",
   "repository": "https://github.com/ChrisLFieldsII/obsdev",
   "bugs": "https://github.com/ChrisLFieldsII/obsdev/issues",

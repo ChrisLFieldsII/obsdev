@@ -81,7 +81,7 @@ jobs:
           if [ -n "$(git status --porcelain)" ]; then
             git add .
             git commit -am "chore: update ${{ matrix.project }} README.md"
-            git config pull.ff only
+            git config pull.rebase true
             git pull && git push -u origin ${{ github.ref_name }}
           fi
       - name: Create Github Release
