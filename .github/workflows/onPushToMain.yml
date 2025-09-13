@@ -18,14 +18,11 @@ jobs:
       projects: ${{ steps.get-projects.outputs.projects }}
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # Fetch all history and commits
-          fetch-tags: false
-      - run: git fetch origin main
       - name: Get changed projects
         id: get-projects
         run: |
-          changed_projects=$(git diff --name-only origin/main ${{ github.sha }} | awk -F/ '{print $1}' | sort -u | grep 'obsdev.*' || true)
+          # changed_projects=$(git diff --name-only origin/main ${{ github.sha }} | awk -F/ '{print $1}' | sort -u | grep 'obsdev.*' || true)
+          changed_projects="obsdev obsdev-jira-plugin"
           if [[ -z "$changed_projects" ]]; then
             echo "No obsdev projects changed, skipping release"
             echo "projects=[]" >> $GITHUB_OUTPUT
