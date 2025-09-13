@@ -23,13 +23,13 @@ jobs:
       - name: Get changed projects
         id: get-projects
         run: |
-          changed_projects=$(git diff --name-only HEAD^ HEAD | awk -F/ '{print $1}' | sort -u | grep 'obsdev.*')
+          changed_projects=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | awk -F/ '{print $1}' | sort -u | grep 'obsdev.*')
           if [[ -z "$changed_projects" ]]; then
             echo "No obsdev projects changed, skipping release"
             echo "projects=[]" >> $GITHUB_OUTPUT
           else
             # Convert to JSON array
-            json=$(printf '%s\n' $changed_projects | jq -R . | jq -s .)
+            json=$(printf '%s\n' $changed_projects | jq -R . | jq -s -c .)
             echo "projects=$json" >> $GITHUB_OUTPUT
           fi
 
