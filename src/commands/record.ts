@@ -57,8 +57,10 @@ export default class Record extends Command {
           }).trim()
           const projName = parsePath(gitDir).name
 
+          const ip = process.env.OBS_WS_IP || '127.0.0.1'
+          const port = process.env.OBS_WS_PORT || 4455
           // Connect to localhost with password
-          await obs.connect('ws://127.0.0.1:4455', process.env.OBS_WS_PASSWORD)
+          await obs.connect(`ws://${ip}:${port}`, process.env.OBS_WS_PASSWORD)
 
           // get original record directory (Where recordings are stored)
           const { recordDirectory: ogRecordDirectory } = await obs.call(
