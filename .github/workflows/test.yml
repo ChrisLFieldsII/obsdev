@@ -11,10 +11,12 @@ jobs:
       projects: ${{ steps.get-projects.outputs.projects }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
       - name: Get changed projects
         id: get-projects
         run: |
-          changed_projects=$(git diff --name-only HEAD | awk -F/ '{print $1}' | sort -u | grep 'obsdev.*')
+          changed_projects=$(git diff --name-only HEAD^ HEAD | awk -F/ '{print $1}' | sort -u | grep 'obsdev.*')
           if [[ -z "$changed_projects" ]]; then
             echo "No obsdev projects changed, skipping release"
             echo "projects=[]" >> $GITHUB_OUTPUT
