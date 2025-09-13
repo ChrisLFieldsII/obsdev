@@ -1,4 +1,4 @@
-import { runHook } from '@oclif/test'
+// import { runHook } from '@oclif/test'
 import { expect } from 'chai'
 
 describe('hooks', () => {
