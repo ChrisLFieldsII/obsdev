@@ -1,4 +1,6 @@
 {
+  "private": true,
+  "packageManager": "yarn@4.5.2",
   "workspaces": [
     "obsdev",
     "obsdev-jira-plugin"
