@@ -20,7 +20,7 @@ $ npm install -g obsdevjiraplugin
 $ obsdevjiraplugin COMMAND
 running command...
 $ obsdevjiraplugin (--version)
-obsdevjiraplugin/0.0.0-test.3 linux-x64 node-v20.19.5
+obsdevjiraplugin/0.0.0-test.4 linux-x64 node-v20.19.5
 $ obsdevjiraplugin --help [COMMAND]
 USAGE
   $ obsdevjiraplugin COMMAND
