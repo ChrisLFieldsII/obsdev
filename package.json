@@ -1,7 +1,7 @@
 {
   "name": "obsdev",
   "description": "Automate use of OBS recordings to help document development workflows with audio/video",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "Christopher Fields II",
   "bin": "./bin/run.js",
   "bugs": "https://github.com/projects/obsdev/issues",
