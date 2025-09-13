@@ -12,8 +12,32 @@ on:
     branches: [main]
 
 jobs:
-  release:
+  get-changed-projects:
     runs-on: ubuntu-latest
+    outputs:
+      projects: ${{ steps.get-projects.outputs.projects }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get changed projects
+        id: get-projects
+        run: |
+          changed_projects=$(git diff --name-only HEAD | awk -F/ '{print $1}' | sort -u | grep 'obsdev.*')
+          if [[ -z "$changed_projects" ]]; then
+            echo "No obsdev projects changed, skipping release"
+            echo "projects=[]" >> $GITHUB_OUTPUT
+          else
+            # Convert to JSON array
+            json=$(printf '%s\n' $changed_projects | jq -R . | jq -s .)
+            echo "projects=$json" >> $GITHUB_OUTPUT
+          fi
+
+  release:
+    needs: get-changed-projects
+    if: ${{ needs.get-changed-projects.outputs.projects != '[]' }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: ${{ fromJson(needs.get-changed-projects.outputs.projects) }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -24,18 +48,21 @@ jobs:
       - name: Check if version already exists
         id: version-check
         run: |
-          package_version=$(node -p "require('./package.json').version")
-          exists=$(gh api repos/${{ github.repository }}/releases/tags/v$package_version >/dev/null 2>&1 && echo "true" || echo "")
+          cd ${{ matrix.project }}
+
+          # ex: obsdev/v1.0.0
+          package_version="${{matrix.project}}/v$(node -p "require('./package.json').version")"
+          exists=$(gh api repos/${{ github.repository }}/releases/tags/$package_version >/dev/null 2>&1 && echo "true" || echo "")
 
           if [ -n "$exists" ];
           then
-            echo "Version v$package_version already exists"
-            echo "::warning file=package.json,line=1::Version v$package_version already exists - no release will be created. If you want to create a new release, please update the version in package.json and push again."
+            echo "Version $package_version already exists"
+            echo "::warning file=package.json,line=1::Version $package_version already exists - no release will be created. If you want to create a new release, please update the version in package.json and push again."
             echo "skipped=true" >> $GITHUB_OUTPUT
           else
-            echo "Version v$package_version does not exist. Creating release..."
+            echo "Version $package_version does not exist. Creating release..."
             echo "skipped=false" >> $GITHUB_OUTPUT
-            echo "tag=v$package_version" >> $GITHUB_OUTPUT
+            echo "tag=$package_version" >> $GITHUB_OUTPUT
           fi
       - name: Setup git
         if: ${{ steps.version-check.outputs.skipped == 'false' }}
@@ -46,11 +73,13 @@ jobs:
         if: ${{ steps.version-check.outputs.skipped == 'false' }}
         id: oclif-readme
         run: |
+          cd ${{ matrix.project }}
+
           yarn && yarn build && yarn prepack
           yarn oclif readme
           if [ -n "$(git status --porcelain)" ]; then
             git add .
-            git commit -am "chore: update README.md"
+            git commit -am "chore: update ${{ matrix.project }} README.md"
             git push -u origin ${{ github.ref_name }}
           fi
       - name: Create Github Release

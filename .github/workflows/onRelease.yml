@@ -5,7 +5,31 @@ on:
     types: [released]
 
 jobs:
+  find-project:
+    runs-on: ubuntu-latest
+    outputs:
+      project: ${{ steps.get-project.outputs.project }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get released project
+        id: get-project
+        run: |
+          tag_name=${{ github.event.release.tag_name }}
+          echo "Released tag: $tag_name"
+
+          # Extract project name from tag (assuming format is project/vX.Y.Z)
+          project=$(echo $tag_name | awk -F/ '{print $1}')
+          echo "Released project: $project"
+
+          if [[ "$project" == obsdev* ]]; then
+            echo "project=$project" >> $GITHUB_OUTPUT
+          else
+            echo "No obsdev project released, skipping publish"
+            echo "project=" >> $GITHUB_OUTPUT
+          fi
   publish:
+    needs: find-project
+    if: ${{ needs.find-project.outputs.project != '' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,10 +40,11 @@ jobs:
         id: enable-corepack
         run: |
           corepack enable
-      - run: yarn
-      - run: yarn build
-      - run: yarn prepack
+      - run: cd ${{ needs.find-project.outputs.project }} && yarn
+      - run: cd ${{ needs.find-project.outputs.project }} && yarn build
+      - run: cd ${{ needs.find-project.outputs.project }} && yarn prepack
       - uses: JS-DevTools/npm-publish@19c28f1ef146469e409470805ea4279d47c3d35c
         with:
           token: ${{ secrets.NPM_TOKEN }}
-      - run: yarn postpack
+          package: ${{ needs.find-project.outputs.project }}/package.json
+      - run: cd ${{ needs.find-project.outputs.project }} && yarn postpack
