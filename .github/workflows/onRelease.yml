@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       project: ${{ steps.get-project.outputs.project }}
+      npm_tag: ${{ steps.get-project.outputs.npm_tag }}
     steps:
       - uses: actions/checkout@v4
       - name: Get released project
@@ -16,6 +17,14 @@ jobs:
         run: |
           tag_name=${{ github.event.release.tag_name }}
           echo "Released tag: $tag_name"
+
+          npm_tag="latest"
+          version=$(echo $tag_name | awk -F/ '{print $2}')
+          if [[ "$version" =~ -([a-zA-Z0-9]+)\. ]]; then
+            npm_tag="${BASH_REMATCH[1]}"
+          fi
+          echo "NPM tag: $npm_tag"
+          echo "npm_tag=$npm_tag" >> $GITHUB_OUTPUT
 
           # Extract project name from tag (assuming format is project/vX.Y.Z)
           project=$(echo $tag_name | awk -F/ '{print $1}')
@@ -47,4 +56,5 @@ jobs:
         with:
           token: ${{ secrets.NPM_TOKEN }}
           package: ${{ needs.find-project.outputs.project }}/package.json
+          tag: ${{ needs.find-project.outputs.npm_tag }}
       - run: cd ${{ needs.find-project.outputs.project }} && yarn postpack
