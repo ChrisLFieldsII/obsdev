@@ -19,12 +19,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 100
+          fetch-depth: 0 # Fetch all history and commits
           fetch-tags: false
+      - run: git fetch origin main
       - name: Get changed projects
         id: get-projects
         run: |
-          changed_projects=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | awk -F/ '{print $1}' | sort -u | grep 'obsdev.*')
+          changed_projects=$(git diff --name-only origin/main ${{ github.sha }} | awk -F/ '{print $1}' | sort -u | grep 'obsdev.*' || true)
           if [[ -z "$changed_projects" ]]; then
             echo "No obsdev projects changed, skipping release"
             echo "projects=[]" >> $GITHUB_OUTPUT
