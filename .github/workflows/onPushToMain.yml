@@ -19,7 +19,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 100
+          fetch-tags: false
       - name: Get changed projects
         id: get-projects
         run: |
