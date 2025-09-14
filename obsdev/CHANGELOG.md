@@ -11,3 +11,7 @@ Official Release 🎉
 ## v1.1.1
 
 - Adds SIGINT handler to stop recording
+
+## v1.1.2
+
+- Adds @oclif/plugin-update
