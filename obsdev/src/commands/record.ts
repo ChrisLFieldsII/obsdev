@@ -54,11 +54,11 @@ export default class Record extends Command {
             throw new Error('Failed to provide filename')
           }
 
-          const branch = execSync('git rev-parse --abbrev-ref HEAD', {
+          const normalizedBranch = execSync('git rev-parse --abbrev-ref HEAD', {
             encoding: 'utf8',
           })
             .trim()
-            .replaceAll('/', '-') // normalize branch name to prevent nested dirs
+            .replaceAll('/', '-') // normalize branch name to prevent nested dirs. NOTE: not cx
 
           const gitDir = execSync('git rev-parse --show-toplevel', {
             encoding: 'utf8',
@@ -77,16 +77,23 @@ export default class Record extends Command {
           const saveRecordDirectory = resolvePath(
             ogRecordDirectory,
             projName,
-            branch
+            normalizedBranch
           )
           const savePath = resolvePath(saveRecordDirectory, `${filename}.mp4`)
 
           this.logJson({
-            branch,
+            normalizedBranch,
             ogRecordDirectory,
             savePath,
             saveRecordDirectory,
           })
+
+          if (isDryRun) {
+            await this.config.runHook('videoSaved', {
+              dryRun: true,
+              path: savePath,
+            })
+          }
 
           // create directory to save recording and change where obs saves recording to it
           // eslint-disable-next-line unicorn/no-negated-condition
