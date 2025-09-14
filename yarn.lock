@@ -6800,6 +6800,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"obsdev-plugin-jira@workspace:obsdev-jira-plugin":
+  version: 0.0.0-use.local
+  resolution: "obsdev-plugin-jira@workspace:obsdev-jira-plugin"
+  dependencies:
+    "@eslint/compat": "npm:^1"
+    "@oclif/core": "npm:^4"
+    "@oclif/plugin-help": "npm:^6"
+    "@oclif/plugin-plugins": "npm:^5"
+    "@oclif/prettier-config": "npm:^0.2.1"
+    "@oclif/test": "npm:^4"
+    "@types/chai": "npm:^4"
+    "@types/mocha": "npm:^10"
+    "@types/node": "npm:^18"
+    chai: "npm:^4"
+    eslint: "npm:^9"
+    eslint-config-oclif: "npm:^6"
+    eslint-config-prettier: "npm:^10"
+    mocha: "npm:^10"
+    oclif: "npm:^4"
+    shx: "npm:^0.3.3"
+    ts-node: "npm:^10"
+    typescript: "npm:^5"
+  bin:
+    obsdev-plugin-jira: ./bin/run.js
+  languageName: unknown
+  linkType: soft
+
 "obsdev@workspace:obsdev":
   version: 0.0.0-use.local
   resolution: "obsdev@workspace:obsdev"
@@ -6827,33 +6854,6 @@ __metadata:
     typescript: "npm:^5"
   bin:
     obsdev: ./bin/run.js
-  languageName: unknown
-  linkType: soft
-
-"obsdevjiraplugin@workspace:obsdev-jira-plugin":
-  version: 0.0.0-use.local
-  resolution: "obsdevjiraplugin@workspace:obsdev-jira-plugin"
-  dependencies:
-    "@eslint/compat": "npm:^1"
-    "@oclif/core": "npm:^4"
-    "@oclif/plugin-help": "npm:^6"
-    "@oclif/plugin-plugins": "npm:^5"
-    "@oclif/prettier-config": "npm:^0.2.1"
-    "@oclif/test": "npm:^4"
-    "@types/chai": "npm:^4"
-    "@types/mocha": "npm:^10"
-    "@types/node": "npm:^18"
-    chai: "npm:^4"
-    eslint: "npm:^9"
-    eslint-config-oclif: "npm:^6"
-    eslint-config-prettier: "npm:^10"
-    mocha: "npm:^10"
-    oclif: "npm:^4"
-    shx: "npm:^0.3.3"
-    ts-node: "npm:^10"
-    typescript: "npm:^5"
-  bin:
-    obsdevjiraplugin: ./bin/run.js
   languageName: unknown
   linkType: soft
 
