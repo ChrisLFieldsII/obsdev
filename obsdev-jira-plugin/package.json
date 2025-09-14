@@ -1,7 +1,7 @@
 {
   "name": "obsdev-plugin-jira",
   "description": "A plugin for obsdev that uploads saved videos to JIRA ticket",
-  "version": "0.0.0-test.5",
+  "version": "1.0.0",
   "author": "Chris Fields II",
   "bin": "./bin/run.js",
   "types": "dist/index.d.ts",

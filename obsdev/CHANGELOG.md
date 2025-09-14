@@ -23,3 +23,8 @@ Official Release 🎉
 ## v1.1.4
 
 - Revert v1.1.2... Thought it used npm
+
+## v1.1.5
+
+- pass dryRun flag to videoSaved hook
+- improve README

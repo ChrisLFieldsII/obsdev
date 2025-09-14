@@ -2,19 +2,36 @@
 
 Automate use of OBS recordings to help document development workflows with audio/video
 
+Use `obsdev record $videoName` to start recording and then stop the recording via OBS or `obsdev stop-record`.
+
+> Not tested yet on Windows
+
+# Requirements
+
+- OBS installed with websocket server enabled (Tools > Websocket Server Settings)
+- Verify OBS source is setup and not frozen
+  - For MacOS, recommend https://github.com/crinkytreadmill/obs-mac-capture-restarter
+
+# Environment Variables
+
+- OBS_WS_IP : optional. defaults to `127.0.0.1`
+- OBS_WS_PORT: optional. defaults to `4455`
+
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/obsdev.svg)](https://npmjs.org/package/obsdev)
 [![Downloads/week](https://img.shields.io/npm/dw/obsdev.svg)](https://npmjs.org/package/obsdev)
 
 <!-- toc -->
-* [obsdev](#obsdev)
-* [Usage](#usage)
-* [Commands](#commands)
+
+- [obsdev](#obsdev)
+- [Usage](#usage)
+- [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
+
 ```sh-session
 $ npm install -g obsdev
 $ obsdev COMMAND
@@ -26,25 +43,27 @@ USAGE
   $ obsdev COMMAND
 ...
 ```
+
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-* [`obsdev help [COMMAND]`](#obsdev-help-command)
-* [`obsdev plugins`](#obsdev-plugins)
-* [`obsdev plugins add PLUGIN`](#obsdev-plugins-add-plugin)
-* [`obsdev plugins:inspect PLUGIN...`](#obsdev-pluginsinspect-plugin)
-* [`obsdev plugins install PLUGIN`](#obsdev-plugins-install-plugin)
-* [`obsdev plugins link PATH`](#obsdev-plugins-link-path)
-* [`obsdev plugins remove [PLUGIN]`](#obsdev-plugins-remove-plugin)
-* [`obsdev plugins reset`](#obsdev-plugins-reset)
-* [`obsdev plugins uninstall [PLUGIN]`](#obsdev-plugins-uninstall-plugin)
-* [`obsdev plugins unlink [PLUGIN]`](#obsdev-plugins-unlink-plugin)
-* [`obsdev plugins update`](#obsdev-plugins-update)
-* [`obsdev record [FILENAME]`](#obsdev-record-filename)
-* [`obsdev stop-record`](#obsdev-stop-record)
-* [`obsdev version`](#obsdev-version)
+
+- [`obsdev help [COMMAND]`](#obsdev-help-command)
+- [`obsdev plugins`](#obsdev-plugins)
+- [`obsdev plugins add PLUGIN`](#obsdev-plugins-add-plugin)
+- [`obsdev plugins:inspect PLUGIN...`](#obsdev-pluginsinspect-plugin)
+- [`obsdev plugins install PLUGIN`](#obsdev-plugins-install-plugin)
+- [`obsdev plugins link PATH`](#obsdev-plugins-link-path)
+- [`obsdev plugins remove [PLUGIN]`](#obsdev-plugins-remove-plugin)
+- [`obsdev plugins reset`](#obsdev-plugins-reset)
+- [`obsdev plugins uninstall [PLUGIN]`](#obsdev-plugins-uninstall-plugin)
+- [`obsdev plugins unlink [PLUGIN]`](#obsdev-plugins-unlink-plugin)
+- [`obsdev plugins update`](#obsdev-plugins-update)
+- [`obsdev record [FILENAME]`](#obsdev-record-filename)
+- [`obsdev stop-record`](#obsdev-stop-record)
+- [`obsdev version`](#obsdev-version)
 
 ## `obsdev help [COMMAND]`
 
@@ -415,4 +434,5 @@ FLAG DESCRIPTIONS
 ```
 
 _See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/v2.2.32/src/commands/version.ts)_
+
 <!-- commandsstop -->
