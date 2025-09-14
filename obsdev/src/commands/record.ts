@@ -58,7 +58,7 @@ export default class Record extends Command {
             encoding: 'utf8',
           })
             .trim()
-            .replaceAll('/', '-') // normalize branch name to prevent nested dirs. NOTE: not cx
+            .replaceAll('/', '-') // normalize branch name to prevent nested dirs.
 
           const gitDir = execSync('git rev-parse --show-toplevel', {
             encoding: 'utf8',

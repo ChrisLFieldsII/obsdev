@@ -22,9 +22,13 @@ Official Release 🎉
 
 ## v1.1.4
 
-- Revert v1.1.2... Thought it used npm
+- Revert v1.1.2... Thought it used npm as repository for checking for updates but seems to be S3
 
 ## v1.1.5
 
 - pass dryRun flag to videoSaved hook
+- improve README
+
+## v1.1.6
+
 - improve README
