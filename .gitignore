@@ -16,8 +16,7 @@ pnpm-lock.yaml
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
-
-
+install-state.gz
 
 tsconfig.tsbuildinfo
 jira-post-attachment.sh
