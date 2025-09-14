@@ -23,44 +23,43 @@ Works by using regex to grab JIRA ticket ID (PROJ-1234) from video path. Branch 
 [![Downloads/week](https://img.shields.io/npm/dw/obsdevjiraplugin.svg)](https://npmjs.org/package/obsdevjiraplugin)
 
 <!-- toc -->
-
-- [Usage](#usage)
-- [Commands](#commands)
+* [obsdev-jira-plugin](#obsdev-jira-plugin)
+* [Docs](#docs)
+* [Required Environment Variables](#required-environment-variables)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g obsdev-plugin-jira
 $ obsdev-plugin-jira COMMAND
 running command...
 $ obsdev-plugin-jira (--version)
-obsdev-plugin-jira/0.0.0-test.5 linux-x64 node-v20.19.5
+obsdev-plugin-jira/1.0.0 linux-x64 node-v20.19.5
 $ obsdev-plugin-jira --help [COMMAND]
 USAGE
   $ obsdev-plugin-jira COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [`obsdev-plugin-jira help [COMMAND]`](#obsdev-plugin-jira-help-command)
-- [`obsdev-plugin-jira plugins`](#obsdev-plugin-jira-plugins)
-- [`obsdev-plugin-jira plugins add PLUGIN`](#obsdev-plugin-jira-plugins-add-plugin)
-- [`obsdev-plugin-jira plugins:inspect PLUGIN...`](#obsdev-plugin-jira-pluginsinspect-plugin)
-- [`obsdev-plugin-jira plugins install PLUGIN`](#obsdev-plugin-jira-plugins-install-plugin)
-- [`obsdev-plugin-jira plugins link PATH`](#obsdev-plugin-jira-plugins-link-path)
-- [`obsdev-plugin-jira plugins remove [PLUGIN]`](#obsdev-plugin-jira-plugins-remove-plugin)
-- [`obsdev-plugin-jira plugins reset`](#obsdev-plugin-jira-plugins-reset)
-- [`obsdev-plugin-jira plugins uninstall [PLUGIN]`](#obsdev-plugin-jira-plugins-uninstall-plugin)
-- [`obsdev-plugin-jira plugins unlink [PLUGIN]`](#obsdev-plugin-jira-plugins-unlink-plugin)
-- [`obsdev-plugin-jira plugins update`](#obsdev-plugin-jira-plugins-update)
+* [`obsdev-plugin-jira help [COMMAND]`](#obsdev-plugin-jira-help-command)
+* [`obsdev-plugin-jira plugins`](#obsdev-plugin-jira-plugins)
+* [`obsdev-plugin-jira plugins add PLUGIN`](#obsdev-plugin-jira-plugins-add-plugin)
+* [`obsdev-plugin-jira plugins:inspect PLUGIN...`](#obsdev-plugin-jira-pluginsinspect-plugin)
+* [`obsdev-plugin-jira plugins install PLUGIN`](#obsdev-plugin-jira-plugins-install-plugin)
+* [`obsdev-plugin-jira plugins link PATH`](#obsdev-plugin-jira-plugins-link-path)
+* [`obsdev-plugin-jira plugins remove [PLUGIN]`](#obsdev-plugin-jira-plugins-remove-plugin)
+* [`obsdev-plugin-jira plugins reset`](#obsdev-plugin-jira-plugins-reset)
+* [`obsdev-plugin-jira plugins uninstall [PLUGIN]`](#obsdev-plugin-jira-plugins-uninstall-plugin)
+* [`obsdev-plugin-jira plugins unlink [PLUGIN]`](#obsdev-plugin-jira-plugins-unlink-plugin)
+* [`obsdev-plugin-jira plugins update`](#obsdev-plugin-jira-plugins-update)
 
 ## `obsdev-plugin-jira help [COMMAND]`
 
@@ -103,7 +102,7 @@ EXAMPLES
   $ obsdev-plugin-jira plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/index.ts)_
 
 ## `obsdev-plugin-jira plugins add PLUGIN`
 
@@ -177,7 +176,7 @@ EXAMPLES
   $ obsdev-plugin-jira plugins inspect myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/inspect.ts)_
 
 ## `obsdev-plugin-jira plugins install PLUGIN`
 
@@ -226,7 +225,7 @@ EXAMPLES
     $ obsdev-plugin-jira plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/install.ts)_
 
 ## `obsdev-plugin-jira plugins link PATH`
 
@@ -257,7 +256,7 @@ EXAMPLES
   $ obsdev-plugin-jira plugins link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/link.ts)_
 
 ## `obsdev-plugin-jira plugins remove [PLUGIN]`
 
@@ -298,7 +297,7 @@ FLAGS
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/reset.ts)_
 
 ## `obsdev-plugin-jira plugins uninstall [PLUGIN]`
 
@@ -326,7 +325,7 @@ EXAMPLES
   $ obsdev-plugin-jira plugins uninstall myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/uninstall.ts)_
 
 ## `obsdev-plugin-jira plugins unlink [PLUGIN]`
 
@@ -370,6 +369,5 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/update.ts)_
-
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/update.ts)_
 <!-- commandsstop -->
