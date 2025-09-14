@@ -15,3 +15,7 @@ Official Release 🎉
 ## v1.1.2
 
 - Adds @oclif/plugin-update
+
+## v1.1.3
+
+- Add help string if record errors

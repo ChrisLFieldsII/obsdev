@@ -37,7 +37,7 @@ export default class Record extends Command {
         }
 
         process.on('SIGINT', async () => {
-          this.log('Caught interrupt signal... stopping recording')
+          this.log('\nCaught interrupt signal... stopping recording')
 
           try {
             await obs.call('StopRecord')
@@ -123,7 +123,11 @@ export default class Record extends Command {
           }
         } catch (error) {
           await cleanup()
-          this.error(`Unexpected error occurred: ${error}`)
+          const helpString = `
+            Check if a recording is already in progress or if OBS is open.
+            Ensure OBS WebSocket is enabled and running (hit apply or ok).
+          `
+          this.error(`Unexpected error occurred: ${error}\n${helpString}`)
         }
       })()
     })
