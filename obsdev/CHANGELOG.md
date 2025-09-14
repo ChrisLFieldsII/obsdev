@@ -7,3 +7,7 @@ Official Release 🎉
 ## v1.1.0
 
 - Adds hook `runHook('videoSaved', { path: savePath })` for plugins to tap into
+
+## v1.1.1
+
+- Adds SIGINT handler to stop recording

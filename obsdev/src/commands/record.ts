@@ -36,6 +36,14 @@ export default class Record extends Command {
           resolve()
         }
 
+        process.on('SIGINT', async () => {
+          this.log('Caught interrupt signal... stopping recording')
+
+          try {
+            await obs.call('StopRecord')
+          } catch (error) {}
+        })
+
         try {
           const { args, flags } = await this.parse(Record)
 
