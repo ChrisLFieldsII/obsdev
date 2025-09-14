@@ -16,38 +16,38 @@ A plugin for obsdev that uploads saved videos to JIRA ticket
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g obsdevjiraplugin
-$ obsdevjiraplugin COMMAND
+$ npm install -g obsdev-plugin-jira
+$ obsdev-plugin-jira COMMAND
 running command...
-$ obsdevjiraplugin (--version)
-obsdevjiraplugin/0.0.0-test.4 linux-x64 node-v20.19.5
-$ obsdevjiraplugin --help [COMMAND]
+$ obsdev-plugin-jira (--version)
+obsdev-plugin-jira/0.0.0-test.5 linux-x64 node-v20.19.5
+$ obsdev-plugin-jira --help [COMMAND]
 USAGE
-  $ obsdevjiraplugin COMMAND
+  $ obsdev-plugin-jira COMMAND
 ...
 ```
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`obsdevjiraplugin help [COMMAND]`](#obsdevjiraplugin-help-command)
-* [`obsdevjiraplugin plugins`](#obsdevjiraplugin-plugins)
-* [`obsdevjiraplugin plugins add PLUGIN`](#obsdevjiraplugin-plugins-add-plugin)
-* [`obsdevjiraplugin plugins:inspect PLUGIN...`](#obsdevjiraplugin-pluginsinspect-plugin)
-* [`obsdevjiraplugin plugins install PLUGIN`](#obsdevjiraplugin-plugins-install-plugin)
-* [`obsdevjiraplugin plugins link PATH`](#obsdevjiraplugin-plugins-link-path)
-* [`obsdevjiraplugin plugins remove [PLUGIN]`](#obsdevjiraplugin-plugins-remove-plugin)
-* [`obsdevjiraplugin plugins reset`](#obsdevjiraplugin-plugins-reset)
-* [`obsdevjiraplugin plugins uninstall [PLUGIN]`](#obsdevjiraplugin-plugins-uninstall-plugin)
-* [`obsdevjiraplugin plugins unlink [PLUGIN]`](#obsdevjiraplugin-plugins-unlink-plugin)
-* [`obsdevjiraplugin plugins update`](#obsdevjiraplugin-plugins-update)
+* [`obsdev-plugin-jira help [COMMAND]`](#obsdev-plugin-jira-help-command)
+* [`obsdev-plugin-jira plugins`](#obsdev-plugin-jira-plugins)
+* [`obsdev-plugin-jira plugins add PLUGIN`](#obsdev-plugin-jira-plugins-add-plugin)
+* [`obsdev-plugin-jira plugins:inspect PLUGIN...`](#obsdev-plugin-jira-pluginsinspect-plugin)
+* [`obsdev-plugin-jira plugins install PLUGIN`](#obsdev-plugin-jira-plugins-install-plugin)
+* [`obsdev-plugin-jira plugins link PATH`](#obsdev-plugin-jira-plugins-link-path)
+* [`obsdev-plugin-jira plugins remove [PLUGIN]`](#obsdev-plugin-jira-plugins-remove-plugin)
+* [`obsdev-plugin-jira plugins reset`](#obsdev-plugin-jira-plugins-reset)
+* [`obsdev-plugin-jira plugins uninstall [PLUGIN]`](#obsdev-plugin-jira-plugins-uninstall-plugin)
+* [`obsdev-plugin-jira plugins unlink [PLUGIN]`](#obsdev-plugin-jira-plugins-unlink-plugin)
+* [`obsdev-plugin-jira plugins update`](#obsdev-plugin-jira-plugins-update)
 
-## `obsdevjiraplugin help [COMMAND]`
+## `obsdev-plugin-jira help [COMMAND]`
 
-Display help for obsdevjiraplugin.
+Display help for obsdev-plugin-jira.
 
 ```
 USAGE
-  $ obsdevjiraplugin help [COMMAND...] [-n]
+  $ obsdev-plugin-jira help [COMMAND...] [-n]
 
 ARGUMENTS
   COMMAND...  Command to show help for.
@@ -56,18 +56,18 @@ FLAGS
   -n, --nested-commands  Include all nested commands in the output.
 
 DESCRIPTION
-  Display help for obsdevjiraplugin.
+  Display help for obsdev-plugin-jira.
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.2.32/src/commands/help.ts)_
 
-## `obsdevjiraplugin plugins`
+## `obsdev-plugin-jira plugins`
 
 List installed plugins.
 
 ```
 USAGE
-  $ obsdevjiraplugin plugins [--json] [--core]
+  $ obsdev-plugin-jira plugins [--json] [--core]
 
 FLAGS
   --core  Show core plugins.
@@ -79,18 +79,18 @@ DESCRIPTION
   List installed plugins.
 
 EXAMPLES
-  $ obsdevjiraplugin plugins
+  $ obsdev-plugin-jira plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/index.ts)_
 
-## `obsdevjiraplugin plugins add PLUGIN`
+## `obsdev-plugin-jira plugins add PLUGIN`
 
-Installs a plugin into obsdevjiraplugin.
+Installs a plugin into obsdev-plugin-jira.
 
 ```
 USAGE
-  $ obsdevjiraplugin plugins add PLUGIN... [--json] [-f] [-h] [-s | -v]
+  $ obsdev-plugin-jira plugins add PLUGIN... [--json] [-f] [-h] [-s | -v]
 
 ARGUMENTS
   PLUGIN...  Plugin to install.
@@ -105,39 +105,39 @@ GLOBAL FLAGS
   --json  Format output as json.
 
 DESCRIPTION
-  Installs a plugin into obsdevjiraplugin.
+  Installs a plugin into obsdev-plugin-jira.
 
   Uses npm to install plugins.
 
   Installation of a user-installed plugin will override a core plugin.
 
-  Use the OBSDEVJIRAPLUGIN_NPM_LOG_LEVEL environment variable to set the npm loglevel.
-  Use the OBSDEVJIRAPLUGIN_NPM_REGISTRY environment variable to set the npm registry.
+  Use the OBSDEV_PLUGIN_JIRA_NPM_LOG_LEVEL environment variable to set the npm loglevel.
+  Use the OBSDEV_PLUGIN_JIRA_NPM_REGISTRY environment variable to set the npm registry.
 
 ALIASES
-  $ obsdevjiraplugin plugins add
+  $ obsdev-plugin-jira plugins add
 
 EXAMPLES
   Install a plugin from npm registry.
 
-    $ obsdevjiraplugin plugins add myplugin
+    $ obsdev-plugin-jira plugins add myplugin
 
   Install a plugin from a github url.
 
-    $ obsdevjiraplugin plugins add https://github.com/someuser/someplugin
+    $ obsdev-plugin-jira plugins add https://github.com/someuser/someplugin
 
   Install a plugin from a github slug.
 
-    $ obsdevjiraplugin plugins add someuser/someplugin
+    $ obsdev-plugin-jira plugins add someuser/someplugin
 ```
 
-## `obsdevjiraplugin plugins:inspect PLUGIN...`
+## `obsdev-plugin-jira plugins:inspect PLUGIN...`
 
 Displays installation properties of a plugin.
 
 ```
 USAGE
-  $ obsdevjiraplugin plugins inspect PLUGIN...
+  $ obsdev-plugin-jira plugins inspect PLUGIN...
 
 ARGUMENTS
   PLUGIN...  [default: .] Plugin to inspect.
@@ -153,18 +153,18 @@ DESCRIPTION
   Displays installation properties of a plugin.
 
 EXAMPLES
-  $ obsdevjiraplugin plugins inspect myplugin
+  $ obsdev-plugin-jira plugins inspect myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/inspect.ts)_
 
-## `obsdevjiraplugin plugins install PLUGIN`
+## `obsdev-plugin-jira plugins install PLUGIN`
 
-Installs a plugin into obsdevjiraplugin.
+Installs a plugin into obsdev-plugin-jira.
 
 ```
 USAGE
-  $ obsdevjiraplugin plugins install PLUGIN... [--json] [-f] [-h] [-s | -v]
+  $ obsdev-plugin-jira plugins install PLUGIN... [--json] [-f] [-h] [-s | -v]
 
 ARGUMENTS
   PLUGIN...  Plugin to install.
@@ -179,41 +179,41 @@ GLOBAL FLAGS
   --json  Format output as json.
 
 DESCRIPTION
-  Installs a plugin into obsdevjiraplugin.
+  Installs a plugin into obsdev-plugin-jira.
 
   Uses npm to install plugins.
 
   Installation of a user-installed plugin will override a core plugin.
 
-  Use the OBSDEVJIRAPLUGIN_NPM_LOG_LEVEL environment variable to set the npm loglevel.
-  Use the OBSDEVJIRAPLUGIN_NPM_REGISTRY environment variable to set the npm registry.
+  Use the OBSDEV_PLUGIN_JIRA_NPM_LOG_LEVEL environment variable to set the npm loglevel.
+  Use the OBSDEV_PLUGIN_JIRA_NPM_REGISTRY environment variable to set the npm registry.
 
 ALIASES
-  $ obsdevjiraplugin plugins add
+  $ obsdev-plugin-jira plugins add
 
 EXAMPLES
   Install a plugin from npm registry.
 
-    $ obsdevjiraplugin plugins install myplugin
+    $ obsdev-plugin-jira plugins install myplugin
 
   Install a plugin from a github url.
 
-    $ obsdevjiraplugin plugins install https://github.com/someuser/someplugin
+    $ obsdev-plugin-jira plugins install https://github.com/someuser/someplugin
 
   Install a plugin from a github slug.
 
-    $ obsdevjiraplugin plugins install someuser/someplugin
+    $ obsdev-plugin-jira plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/install.ts)_
 
-## `obsdevjiraplugin plugins link PATH`
+## `obsdev-plugin-jira plugins link PATH`
 
 Links a plugin into the CLI for development.
 
 ```
 USAGE
-  $ obsdevjiraplugin plugins link PATH [-h] [--install] [-v]
+  $ obsdev-plugin-jira plugins link PATH [-h] [--install] [-v]
 
 ARGUMENTS
   PATH  [default: .] path to plugin
@@ -233,18 +233,18 @@ DESCRIPTION
 
 
 EXAMPLES
-  $ obsdevjiraplugin plugins link myplugin
+  $ obsdev-plugin-jira plugins link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/link.ts)_
 
-## `obsdevjiraplugin plugins remove [PLUGIN]`
+## `obsdev-plugin-jira plugins remove [PLUGIN]`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ obsdevjiraplugin plugins remove [PLUGIN...] [-h] [-v]
+  $ obsdev-plugin-jira plugins remove [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
   PLUGIN...  plugin to uninstall
@@ -257,35 +257,35 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ obsdevjiraplugin plugins unlink
-  $ obsdevjiraplugin plugins remove
+  $ obsdev-plugin-jira plugins unlink
+  $ obsdev-plugin-jira plugins remove
 
 EXAMPLES
-  $ obsdevjiraplugin plugins remove myplugin
+  $ obsdev-plugin-jira plugins remove myplugin
 ```
 
-## `obsdevjiraplugin plugins reset`
+## `obsdev-plugin-jira plugins reset`
 
 Remove all user-installed and linked plugins.
 
 ```
 USAGE
-  $ obsdevjiraplugin plugins reset [--hard] [--reinstall]
+  $ obsdev-plugin-jira plugins reset [--hard] [--reinstall]
 
 FLAGS
   --hard       Delete node_modules and package manager related files in addition to uninstalling plugins.
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/reset.ts)_
 
-## `obsdevjiraplugin plugins uninstall [PLUGIN]`
+## `obsdev-plugin-jira plugins uninstall [PLUGIN]`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ obsdevjiraplugin plugins uninstall [PLUGIN...] [-h] [-v]
+  $ obsdev-plugin-jira plugins uninstall [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
   PLUGIN...  plugin to uninstall
@@ -298,22 +298,22 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ obsdevjiraplugin plugins unlink
-  $ obsdevjiraplugin plugins remove
+  $ obsdev-plugin-jira plugins unlink
+  $ obsdev-plugin-jira plugins remove
 
 EXAMPLES
-  $ obsdevjiraplugin plugins uninstall myplugin
+  $ obsdev-plugin-jira plugins uninstall myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/uninstall.ts)_
 
-## `obsdevjiraplugin plugins unlink [PLUGIN]`
+## `obsdev-plugin-jira plugins unlink [PLUGIN]`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ obsdevjiraplugin plugins unlink [PLUGIN...] [-h] [-v]
+  $ obsdev-plugin-jira plugins unlink [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
   PLUGIN...  plugin to uninstall
@@ -326,20 +326,20 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ obsdevjiraplugin plugins unlink
-  $ obsdevjiraplugin plugins remove
+  $ obsdev-plugin-jira plugins unlink
+  $ obsdev-plugin-jira plugins remove
 
 EXAMPLES
-  $ obsdevjiraplugin plugins unlink myplugin
+  $ obsdev-plugin-jira plugins unlink myplugin
 ```
 
-## `obsdevjiraplugin plugins update`
+## `obsdev-plugin-jira plugins update`
 
 Update installed plugins.
 
 ```
 USAGE
-  $ obsdevjiraplugin plugins update [-h] [-v]
+  $ obsdev-plugin-jira plugins update [-h] [-v]
 
 FLAGS
   -h, --help     Show CLI help.
@@ -349,5 +349,5 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/update.ts)_
 <!-- commandsstop -->
