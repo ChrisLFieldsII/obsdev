@@ -54,50 +54,48 @@ Videos are a crucial communication mechanism for teams, especially remote teams 
 [![Downloads/week](https://img.shields.io/npm/dw/obsdev.svg)](https://npmjs.org/package/obsdev)
 
 <!-- toc -->
-
-- [obsdev](#obsdev)
-- [Requirements](#requirements)
-- [Environment Variables](#environment-variables)
-- [Usage](#usage)
-- [Commands](#commands)
+* [obsdev](#obsdev)
+* [What is obsdev?](#what-is-obsdev)
+* [Requirements](#requirements)
+* [Environment Variables](#environment-variables)
+* [Limitations](#limitations)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g obsdev
 $ obsdev COMMAND
 running command...
 $ obsdev (--version)
-obsdev/1.1.5 linux-x64 node-v20.19.5
+obsdev/1.1.6 linux-x64 node-v20.19.5
 $ obsdev --help [COMMAND]
 USAGE
   $ obsdev COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [`obsdev help [COMMAND]`](#obsdev-help-command)
-- [`obsdev plugins`](#obsdev-plugins)
-- [`obsdev plugins add PLUGIN`](#obsdev-plugins-add-plugin)
-- [`obsdev plugins:inspect PLUGIN...`](#obsdev-pluginsinspect-plugin)
-- [`obsdev plugins install PLUGIN`](#obsdev-plugins-install-plugin)
-- [`obsdev plugins link PATH`](#obsdev-plugins-link-path)
-- [`obsdev plugins remove [PLUGIN]`](#obsdev-plugins-remove-plugin)
-- [`obsdev plugins reset`](#obsdev-plugins-reset)
-- [`obsdev plugins uninstall [PLUGIN]`](#obsdev-plugins-uninstall-plugin)
-- [`obsdev plugins unlink [PLUGIN]`](#obsdev-plugins-unlink-plugin)
-- [`obsdev plugins update`](#obsdev-plugins-update)
-- [`obsdev record [FILENAME]`](#obsdev-record-filename)
-- [`obsdev stop-record`](#obsdev-stop-record)
-- [`obsdev version`](#obsdev-version)
+* [`obsdev help [COMMAND]`](#obsdev-help-command)
+* [`obsdev plugins`](#obsdev-plugins)
+* [`obsdev plugins add PLUGIN`](#obsdev-plugins-add-plugin)
+* [`obsdev plugins:inspect PLUGIN...`](#obsdev-pluginsinspect-plugin)
+* [`obsdev plugins install PLUGIN`](#obsdev-plugins-install-plugin)
+* [`obsdev plugins link PATH`](#obsdev-plugins-link-path)
+* [`obsdev plugins remove [PLUGIN]`](#obsdev-plugins-remove-plugin)
+* [`obsdev plugins reset`](#obsdev-plugins-reset)
+* [`obsdev plugins uninstall [PLUGIN]`](#obsdev-plugins-uninstall-plugin)
+* [`obsdev plugins unlink [PLUGIN]`](#obsdev-plugins-unlink-plugin)
+* [`obsdev plugins update`](#obsdev-plugins-update)
+* [`obsdev record [FILENAME]`](#obsdev-record-filename)
+* [`obsdev stop-record`](#obsdev-stop-record)
+* [`obsdev version`](#obsdev-version)
 
 ## `obsdev help [COMMAND]`
 
@@ -140,7 +138,7 @@ EXAMPLES
   $ obsdev plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/index.ts)_
 
 ## `obsdev plugins add PLUGIN`
 
@@ -214,7 +212,7 @@ EXAMPLES
   $ obsdev plugins inspect myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/inspect.ts)_
 
 ## `obsdev plugins install PLUGIN`
 
@@ -263,7 +261,7 @@ EXAMPLES
     $ obsdev plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/install.ts)_
 
 ## `obsdev plugins link PATH`
 
@@ -294,7 +292,7 @@ EXAMPLES
   $ obsdev plugins link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/link.ts)_
 
 ## `obsdev plugins remove [PLUGIN]`
 
@@ -335,7 +333,7 @@ FLAGS
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/reset.ts)_
 
 ## `obsdev plugins uninstall [PLUGIN]`
 
@@ -363,7 +361,7 @@ EXAMPLES
   $ obsdev plugins uninstall myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/uninstall.ts)_
 
 ## `obsdev plugins unlink [PLUGIN]`
 
@@ -407,7 +405,7 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/update.ts)_
 
 ## `obsdev record [FILENAME]`
 
@@ -430,7 +428,7 @@ EXAMPLES
   $ obsdev record -d demo-1
 ```
 
-_See code: [src/commands/record.ts](https://github.com/ChrisLFieldsII/obsdev/blob/v1.1.5/src/commands/record.ts)_
+_See code: [src/commands/record.ts](https://github.com/ChrisLFieldsII/obsdev/blob/v1.1.6/src/commands/record.ts)_
 
 ## `obsdev stop-record`
 
@@ -447,7 +445,7 @@ EXAMPLES
   $ obsdev stop-record
 ```
 
-_See code: [src/commands/stop-record.ts](https://github.com/ChrisLFieldsII/obsdev/blob/v1.1.5/src/commands/stop-record.ts)_
+_See code: [src/commands/stop-record.ts](https://github.com/ChrisLFieldsII/obsdev/blob/v1.1.6/src/commands/stop-record.ts)_
 
 ## `obsdev version`
 
@@ -467,6 +465,5 @@ FLAG DESCRIPTIONS
     Additionally shows the architecture, node version, operating system, and versions of plugins that the CLI is using.
 ```
 
-_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/v2.2.32/src/commands/version.ts)_
-
+_See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/v2.2.33/src/commands/version.ts)_
 <!-- commandsstop -->
