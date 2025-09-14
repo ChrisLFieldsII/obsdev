@@ -1,15 +1,16 @@
 {
-  "name": "obsdevjiraplugin",
+  "name": "obsdev-plugin-jira",
   "description": "A plugin for obsdev that uploads saved videos to JIRA ticket",
-  "version": "0.0.0-test.4",
+  "version": "0.0.0-test.5",
   "author": "Chris Fields II",
   "bin": "./bin/run.js",
   "types": "dist/index.d.ts",
-  "bugs": "https://github.com/projects/obsdevjiraplugin/issues",
+  "packageManager": "yarn@4.5.2",
+  "repository": "https://github.com/ChrisLFieldsII/obsdev",
+  "bugs": "https://github.com/ChrisLFieldsII/obsdev/issues",
   "license": "MIT",
   "main": "dist/index.js",
   "type": "module",
-  "repository": "projects/obsdevjiraplugin",
   "engines": {
     "node": ">=18.0.0"
   },
@@ -18,13 +19,12 @@
     "./dist",
     "./oclif.manifest.json"
   ],
-  "homepage": "https://github.com/projects/obsdevjiraplugin",
   "keywords": [
     "oclif"
   ],
   "oclif": {
-    "bin": "obsdevjiraplugin",
-    "dirname": "obsdevjiraplugin",
+    "bin": "obsdev-plugin-jira",
+    "dirname": "obsdev-plugin-jira",
     "commands": "./dist/commands",
     "plugins": [
       "@oclif/plugin-help",
