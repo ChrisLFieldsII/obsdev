@@ -19,3 +19,7 @@ Official Release 🎉
 ## v1.1.3
 
 - Add help string if record errors
+
+## v1.1.4
+
+- Revert v1.1.2... Thought it used npm
