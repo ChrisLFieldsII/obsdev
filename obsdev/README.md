@@ -20,7 +20,7 @@ $ npm install -g obsdev
 $ obsdev COMMAND
 running command...
 $ obsdev (--version)
-obsdev/1.1.1 linux-x64 node-v20.19.5
+obsdev/1.1.2 linux-x64 node-v20.19.5
 $ obsdev --help [COMMAND]
 USAGE
   $ obsdev COMMAND
@@ -44,6 +44,7 @@ USAGE
 * [`obsdev plugins update`](#obsdev-plugins-update)
 * [`obsdev record [FILENAME]`](#obsdev-record-filename)
 * [`obsdev stop-record`](#obsdev-stop-record)
+* [`obsdev update [CHANNEL]`](#obsdev-update-channel)
 * [`obsdev version`](#obsdev-version)
 
 ## `obsdev help [COMMAND]`
@@ -377,7 +378,7 @@ EXAMPLES
   $ obsdev record -d demo-1
 ```
 
-_See code: [src/commands/record.ts](https://github.com/ChrisLFieldsII/obsdev/blob/v1.1.1/src/commands/record.ts)_
+_See code: [src/commands/record.ts](https://github.com/ChrisLFieldsII/obsdev/blob/v1.1.2/src/commands/record.ts)_
 
 ## `obsdev stop-record`
 
@@ -394,7 +395,45 @@ EXAMPLES
   $ obsdev stop-record
 ```
 
-_See code: [src/commands/stop-record.ts](https://github.com/ChrisLFieldsII/obsdev/blob/v1.1.1/src/commands/stop-record.ts)_
+_See code: [src/commands/stop-record.ts](https://github.com/ChrisLFieldsII/obsdev/blob/v1.1.2/src/commands/stop-record.ts)_
+
+## `obsdev update [CHANNEL]`
+
+update the obsdev CLI
+
+```
+USAGE
+  $ obsdev update [CHANNEL] [--force |  | [-a | -v <value> | -i]] [-b ]
+
+FLAGS
+  -a, --available        See available versions.
+  -b, --verbose          Show more details about the available versions.
+  -i, --interactive      Interactively select version to install. This is ignored if a channel is provided.
+  -v, --version=<value>  Install a specific version.
+      --force            Force a re-download of the requested version.
+
+DESCRIPTION
+  update the obsdev CLI
+
+EXAMPLES
+  Update to the stable channel:
+
+    $ obsdev update stable
+
+  Update to a specific version:
+
+    $ obsdev update --version 1.0.0
+
+  Interactively select version:
+
+    $ obsdev update --interactive
+
+  See available versions:
+
+    $ obsdev update --available
+```
+
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v4.7.4/src/commands/update.ts)_
 
 ## `obsdev version`
 
