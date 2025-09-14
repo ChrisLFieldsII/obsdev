@@ -48,7 +48,9 @@
   "dependencies": {
     "@oclif/core": "^4",
     "@oclif/plugin-help": "^6",
-    "@oclif/plugin-plugins": "^5"
+    "@oclif/plugin-plugins": "^5",
+    "form-data": "^4.0.4",
+    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
     "@eslint/compat": "^1",
