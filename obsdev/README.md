@@ -20,7 +20,7 @@ $ npm install -g obsdev
 $ obsdev COMMAND
 running command...
 $ obsdev (--version)
-obsdev/1.1.2 linux-x64 node-v20.19.5
+obsdev/1.1.3 linux-x64 node-v20.19.5
 $ obsdev --help [COMMAND]
 USAGE
   $ obsdev COMMAND
@@ -378,7 +378,7 @@ EXAMPLES
   $ obsdev record -d demo-1
 ```
 
-_See code: [src/commands/record.ts](https://github.com/ChrisLFieldsII/obsdev/blob/v1.1.2/src/commands/record.ts)_
+_See code: [src/commands/record.ts](https://github.com/ChrisLFieldsII/obsdev/blob/v1.1.3/src/commands/record.ts)_
 
 ## `obsdev stop-record`
 
@@ -395,7 +395,7 @@ EXAMPLES
   $ obsdev stop-record
 ```
 
-_See code: [src/commands/stop-record.ts](https://github.com/ChrisLFieldsII/obsdev/blob/v1.1.2/src/commands/stop-record.ts)_
+_See code: [src/commands/stop-record.ts](https://github.com/ChrisLFieldsII/obsdev/blob/v1.1.3/src/commands/stop-record.ts)_
 
 ## `obsdev update [CHANNEL]`
 
