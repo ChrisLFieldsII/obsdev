@@ -1,14 +1,14 @@
 {
   "name": "obsdev-plugin-jira",
   "description": "A plugin for obsdev that uploads saved videos to JIRA ticket",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Chris Fields II",
   "bin": "./bin/run.js",
   "types": "dist/index.d.ts",
   "packageManager": "yarn@4.5.2",
   "repository": "https://github.com/ChrisLFieldsII/obsdev",
   "bugs": "https://github.com/ChrisLFieldsII/obsdev/issues",
-  "license": "MIT",
+  "license": "LICENSE.md",
   "main": "dist/index.js",
   "type": "module",
   "engines": {

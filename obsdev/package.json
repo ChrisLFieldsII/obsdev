@@ -1,13 +1,51 @@
 {
   "name": "obsdev",
   "description": "Automate use of OBS recordings via command line to help document development workflows with audio/video",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "author": "Christopher Fields II",
   "repository": "https://github.com/ChrisLFieldsII/obsdev",
   "bugs": "https://github.com/ChrisLFieldsII/obsdev/issues",
   "types": "dist/index.d.ts",
   "packageManager": "yarn@4.5.2",
   "bin": "./bin/run.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "./bin",
+    "./dist",
+    "./oclif.manifest.json"
+  ],
+  "keywords": [
+    "obs",
+    "developer",
+    "recording"
+  ],
+  "license": "LICENSE.md",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "shx rm -rf dist && tsc -b",
+    "lint": "eslint",
+    "postpack": "shx rm -f oclif.manifest.json",
+    "posttest": "yarn lint",
+    "prepack": "oclif manifest && oclif readme",
+    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif readme && git add README.md"
+  },
+  "oclif": {
+    "bin": "obsdev",
+    "dirname": "obsdev",
+    "commands": "./dist/commands",
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-plugins",
+      "@oclif/plugin-version",
+      "@oclif/plugin-not-found"
+    ],
+    "topicSeparator": " ",
+    "topics": {}
+  },
   "dependencies": {
     "@oclif/core": "^4",
     "@oclif/plugin-help": "^6",
@@ -32,43 +70,5 @@
     "shx": "^0.3.3",
     "ts-node": "^10",
     "typescript": "^5"
-  },
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "files": [
-    "./bin",
-    "./dist",
-    "./oclif.manifest.json"
-  ],
-  "keywords": [
-    "obs",
-    "developer",
-    "recording"
-  ],
-  "license": "MIT",
-  "main": "dist/index.js",
-  "type": "module",
-  "scripts": {
-    "build": "shx rm -rf dist && tsc -b",
-    "lint": "eslint",
-    "postpack": "shx rm -f oclif.manifest.json",
-    "posttest": "yarn lint",
-    "prepack": "oclif manifest && oclif readme",
-    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
-    "version": "oclif readme && git add README.md"
-  },
-  "oclif": {
-    "bin": "obsdev",
-    "dirname": "obsdev",
-    "commands": "./dist/commands",
-    "plugins": [
-      "@oclif/plugin-help",
-      "@oclif/plugin-plugins",
-      "@oclif/plugin-version",
-      "@oclif/plugin-not-found"
-    ],
-    "topicSeparator": " ",
-    "topics": {}
   }
 }

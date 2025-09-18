@@ -32,3 +32,8 @@ Official Release 🎉
 ## v1.1.6
 
 - improve README
+
+## v1.1.7
+
+- improve README
+- add LICENSE

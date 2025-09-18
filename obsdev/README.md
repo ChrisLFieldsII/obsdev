@@ -1,12 +1,27 @@
 # obsdev
 
+[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
+[![Version](https://img.shields.io/npm/v/obsdev.svg)](https://npmjs.org/package/obsdev)
+[![Downloads/week](https://img.shields.io/npm/dw/obsdev.svg)](https://npmjs.org/package/obsdev)
+
 Automate use of OBS recordings to help document development workflows with audio/video
 
-Use `obsdev record $recordingName` to start recording and then stop the recording via OBS or `obsdev stop-record`.
+Use `obsdev record $recordingName` within a git repo to start recording and then stop the recording via OBS or `obsdev stop-record`.
+
+<!-- toc -->
+
+- [obsdev](#obsdev)
+- [What is obsdev?](#what-is-obsdev)
+- [Requirements](#requirements)
+- [Environment Variables](#environment-variables)
+- [Limitations](#limitations)
+- [Usage](#usage)
+- [Commands](#commands)
+<!-- tocstop -->
 
 # What is obsdev?
 
-obsdev is a command line utility that helps developers use OBS to record videos as they work and easily organize where the recordings are stored based on the current `git branch`.
+`obsdev` is a command line utility that helps developers use OBS to record videos as they work and easily organize where the recordings are stored based on the current `git branch`.
 
 It also takes advantage of [oclif plugins](https://oclif.io/docs/plugins) to allow developers to add plugins to further process saved recordings. Check out [obsdev-jira-plugin](../obsdev-jira-plugin/) which uploads saved recordings to JIRA tickets automatically.
 
@@ -49,23 +64,10 @@ Videos are a crucial communication mechanism for teams, especially remote teams 
 - Not tested yet on Windows
 - If tool errors after setting output path for recording, it will require manual fixing back to root path you want to use. Need to find a programmatic fix for this
 
-[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/obsdev.svg)](https://npmjs.org/package/obsdev)
-[![Downloads/week](https://img.shields.io/npm/dw/obsdev.svg)](https://npmjs.org/package/obsdev)
-
-<!-- toc -->
-* [obsdev](#obsdev)
-* [What is obsdev?](#what-is-obsdev)
-* [Requirements](#requirements)
-* [Environment Variables](#environment-variables)
-* [Limitations](#limitations)
-* [Usage](#usage)
-* [Commands](#commands)
-<!-- tocstop -->
-
 # Usage
 
 <!-- usage -->
+
 ```sh-session
 $ npm install -g obsdev
 $ obsdev COMMAND
@@ -77,25 +79,27 @@ USAGE
   $ obsdev COMMAND
 ...
 ```
+
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-* [`obsdev help [COMMAND]`](#obsdev-help-command)
-* [`obsdev plugins`](#obsdev-plugins)
-* [`obsdev plugins add PLUGIN`](#obsdev-plugins-add-plugin)
-* [`obsdev plugins:inspect PLUGIN...`](#obsdev-pluginsinspect-plugin)
-* [`obsdev plugins install PLUGIN`](#obsdev-plugins-install-plugin)
-* [`obsdev plugins link PATH`](#obsdev-plugins-link-path)
-* [`obsdev plugins remove [PLUGIN]`](#obsdev-plugins-remove-plugin)
-* [`obsdev plugins reset`](#obsdev-plugins-reset)
-* [`obsdev plugins uninstall [PLUGIN]`](#obsdev-plugins-uninstall-plugin)
-* [`obsdev plugins unlink [PLUGIN]`](#obsdev-plugins-unlink-plugin)
-* [`obsdev plugins update`](#obsdev-plugins-update)
-* [`obsdev record [FILENAME]`](#obsdev-record-filename)
-* [`obsdev stop-record`](#obsdev-stop-record)
-* [`obsdev version`](#obsdev-version)
+
+- [`obsdev help [COMMAND]`](#obsdev-help-command)
+- [`obsdev plugins`](#obsdev-plugins)
+- [`obsdev plugins add PLUGIN`](#obsdev-plugins-add-plugin)
+- [`obsdev plugins:inspect PLUGIN...`](#obsdev-pluginsinspect-plugin)
+- [`obsdev plugins install PLUGIN`](#obsdev-plugins-install-plugin)
+- [`obsdev plugins link PATH`](#obsdev-plugins-link-path)
+- [`obsdev plugins remove [PLUGIN]`](#obsdev-plugins-remove-plugin)
+- [`obsdev plugins reset`](#obsdev-plugins-reset)
+- [`obsdev plugins uninstall [PLUGIN]`](#obsdev-plugins-uninstall-plugin)
+- [`obsdev plugins unlink [PLUGIN]`](#obsdev-plugins-unlink-plugin)
+- [`obsdev plugins update`](#obsdev-plugins-update)
+- [`obsdev record [FILENAME]`](#obsdev-record-filename)
+- [`obsdev stop-record`](#obsdev-stop-record)
+- [`obsdev version`](#obsdev-version)
 
 ## `obsdev help [COMMAND]`
 
@@ -466,4 +470,13 @@ FLAG DESCRIPTIONS
 ```
 
 _See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/v2.2.33/src/commands/version.ts)_
+
 <!-- commandsstop -->
+
+# Hooks
+
+The following are [hooks](https://oclif.io/docs/hooks/) that `obsdev` emits for plugins to tap into
+
+- `videoSaved`
+  - `dryRun` : boolean
+  - `path` : string - this is the path the video was saved to
