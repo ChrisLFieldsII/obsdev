@@ -5,12 +5,11 @@
 [![Downloads/week](https://img.shields.io/npm/dw/obsdevjiraplugin.svg)](https://npmjs.org/package/obsdevjiraplugin)
 
 <!-- toc -->
-
-- [obsdev-jira-plugin](#obsdev-jira-plugin)
-- [Docs](#docs)
-- [Required Environment Variables](#required-environment-variables)
-- [Usage](#usage)
-- [Commands](#commands)
+* [obsdev-plugin-jira](#obsdev-plugin-jira)
+* [Docs](#docs)
+* [Required Environment Variables](#required-environment-variables)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Docs
@@ -34,36 +33,33 @@ Works by using regex to grab JIRA ticket ID (PROJ-1234) from video path. Branch 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g obsdev-plugin-jira
 $ obsdev-plugin-jira COMMAND
 running command...
 $ obsdev-plugin-jira (--version)
-obsdev-plugin-jira/1.0.0 linux-x64 node-v20.19.5
+obsdev-plugin-jira/1.0.1 linux-x64 node-v20.19.5
 $ obsdev-plugin-jira --help [COMMAND]
 USAGE
   $ obsdev-plugin-jira COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [`obsdev-plugin-jira help [COMMAND]`](#obsdev-plugin-jira-help-command)
-- [`obsdev-plugin-jira plugins`](#obsdev-plugin-jira-plugins)
-- [`obsdev-plugin-jira plugins add PLUGIN`](#obsdev-plugin-jira-plugins-add-plugin)
-- [`obsdev-plugin-jira plugins:inspect PLUGIN...`](#obsdev-plugin-jira-pluginsinspect-plugin)
-- [`obsdev-plugin-jira plugins install PLUGIN`](#obsdev-plugin-jira-plugins-install-plugin)
-- [`obsdev-plugin-jira plugins link PATH`](#obsdev-plugin-jira-plugins-link-path)
-- [`obsdev-plugin-jira plugins remove [PLUGIN]`](#obsdev-plugin-jira-plugins-remove-plugin)
-- [`obsdev-plugin-jira plugins reset`](#obsdev-plugin-jira-plugins-reset)
-- [`obsdev-plugin-jira plugins uninstall [PLUGIN]`](#obsdev-plugin-jira-plugins-uninstall-plugin)
-- [`obsdev-plugin-jira plugins unlink [PLUGIN]`](#obsdev-plugin-jira-plugins-unlink-plugin)
-- [`obsdev-plugin-jira plugins update`](#obsdev-plugin-jira-plugins-update)
+* [`obsdev-plugin-jira help [COMMAND]`](#obsdev-plugin-jira-help-command)
+* [`obsdev-plugin-jira plugins`](#obsdev-plugin-jira-plugins)
+* [`obsdev-plugin-jira plugins add PLUGIN`](#obsdev-plugin-jira-plugins-add-plugin)
+* [`obsdev-plugin-jira plugins:inspect PLUGIN...`](#obsdev-plugin-jira-pluginsinspect-plugin)
+* [`obsdev-plugin-jira plugins install PLUGIN`](#obsdev-plugin-jira-plugins-install-plugin)
+* [`obsdev-plugin-jira plugins link PATH`](#obsdev-plugin-jira-plugins-link-path)
+* [`obsdev-plugin-jira plugins remove [PLUGIN]`](#obsdev-plugin-jira-plugins-remove-plugin)
+* [`obsdev-plugin-jira plugins reset`](#obsdev-plugin-jira-plugins-reset)
+* [`obsdev-plugin-jira plugins uninstall [PLUGIN]`](#obsdev-plugin-jira-plugins-uninstall-plugin)
+* [`obsdev-plugin-jira plugins unlink [PLUGIN]`](#obsdev-plugin-jira-plugins-unlink-plugin)
+* [`obsdev-plugin-jira plugins update`](#obsdev-plugin-jira-plugins-update)
 
 ## `obsdev-plugin-jira help [COMMAND]`
 
@@ -374,5 +370,4 @@ DESCRIPTION
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/update.ts)_
-
 <!-- commandsstop -->
