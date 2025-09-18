@@ -9,14 +9,14 @@ Automate use of OBS recordings to help document development workflows with audio
 Use `obsdev record $recordingName` within a git repo to start recording and then stop the recording via OBS or `obsdev stop-record`.
 
 <!-- toc -->
-
-- [obsdev](#obsdev)
-- [What is obsdev?](#what-is-obsdev)
-- [Requirements](#requirements)
-- [Environment Variables](#environment-variables)
-- [Limitations](#limitations)
-- [Usage](#usage)
-- [Commands](#commands)
+* [obsdev](#obsdev)
+* [What is obsdev?](#what-is-obsdev)
+* [Requirements](#requirements)
+* [Environment Variables](#environment-variables)
+* [Limitations](#limitations)
+* [Usage](#usage)
+* [Commands](#commands)
+* [Hooks](#hooks)
 <!-- tocstop -->
 
 # What is obsdev?
@@ -67,39 +67,36 @@ Videos are a crucial communication mechanism for teams, especially remote teams 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g obsdev
 $ obsdev COMMAND
 running command...
 $ obsdev (--version)
-obsdev/1.1.6 linux-x64 node-v20.19.5
+obsdev/1.1.7 linux-x64 node-v20.19.5
 $ obsdev --help [COMMAND]
 USAGE
   $ obsdev COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [`obsdev help [COMMAND]`](#obsdev-help-command)
-- [`obsdev plugins`](#obsdev-plugins)
-- [`obsdev plugins add PLUGIN`](#obsdev-plugins-add-plugin)
-- [`obsdev plugins:inspect PLUGIN...`](#obsdev-pluginsinspect-plugin)
-- [`obsdev plugins install PLUGIN`](#obsdev-plugins-install-plugin)
-- [`obsdev plugins link PATH`](#obsdev-plugins-link-path)
-- [`obsdev plugins remove [PLUGIN]`](#obsdev-plugins-remove-plugin)
-- [`obsdev plugins reset`](#obsdev-plugins-reset)
-- [`obsdev plugins uninstall [PLUGIN]`](#obsdev-plugins-uninstall-plugin)
-- [`obsdev plugins unlink [PLUGIN]`](#obsdev-plugins-unlink-plugin)
-- [`obsdev plugins update`](#obsdev-plugins-update)
-- [`obsdev record [FILENAME]`](#obsdev-record-filename)
-- [`obsdev stop-record`](#obsdev-stop-record)
-- [`obsdev version`](#obsdev-version)
+* [`obsdev help [COMMAND]`](#obsdev-help-command)
+* [`obsdev plugins`](#obsdev-plugins)
+* [`obsdev plugins add PLUGIN`](#obsdev-plugins-add-plugin)
+* [`obsdev plugins:inspect PLUGIN...`](#obsdev-pluginsinspect-plugin)
+* [`obsdev plugins install PLUGIN`](#obsdev-plugins-install-plugin)
+* [`obsdev plugins link PATH`](#obsdev-plugins-link-path)
+* [`obsdev plugins remove [PLUGIN]`](#obsdev-plugins-remove-plugin)
+* [`obsdev plugins reset`](#obsdev-plugins-reset)
+* [`obsdev plugins uninstall [PLUGIN]`](#obsdev-plugins-uninstall-plugin)
+* [`obsdev plugins unlink [PLUGIN]`](#obsdev-plugins-unlink-plugin)
+* [`obsdev plugins update`](#obsdev-plugins-update)
+* [`obsdev record [FILENAME]`](#obsdev-record-filename)
+* [`obsdev stop-record`](#obsdev-stop-record)
+* [`obsdev version`](#obsdev-version)
 
 ## `obsdev help [COMMAND]`
 
@@ -432,7 +429,7 @@ EXAMPLES
   $ obsdev record -d demo-1
 ```
 
-_See code: [src/commands/record.ts](https://github.com/ChrisLFieldsII/obsdev/blob/v1.1.6/src/commands/record.ts)_
+_See code: [src/commands/record.ts](https://github.com/ChrisLFieldsII/obsdev/blob/v1.1.7/src/commands/record.ts)_
 
 ## `obsdev stop-record`
 
@@ -449,7 +446,7 @@ EXAMPLES
   $ obsdev stop-record
 ```
 
-_See code: [src/commands/stop-record.ts](https://github.com/ChrisLFieldsII/obsdev/blob/v1.1.6/src/commands/stop-record.ts)_
+_See code: [src/commands/stop-record.ts](https://github.com/ChrisLFieldsII/obsdev/blob/v1.1.7/src/commands/stop-record.ts)_
 
 ## `obsdev version`
 
@@ -470,7 +467,6 @@ FLAG DESCRIPTIONS
 ```
 
 _See code: [@oclif/plugin-version](https://github.com/oclif/plugin-version/blob/v2.2.33/src/commands/version.ts)_
-
 <!-- commandsstop -->
 
 # Hooks
